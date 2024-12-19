@@ -11,3 +11,5 @@ button.addEventListener("click", (e) => {
   document.querySelector(".color").textContent =
     document.querySelector("body").style.backgroundColor;
 });
+
+// "body" ve ".color" classlarını yine bir değişkene atayarak da yapabilirdim fakat bu şekilde kullanımını da görmek için bu şekilde yaptım.
