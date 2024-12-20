@@ -9,16 +9,17 @@ const destroy = document.getElementsByTagName("button")[1];
 const boxes = document.querySelector("#boxes");
 
 function createBox(amount) {
+  const size = Array.from({ length: amount }, (_, index) => 30 + index * 10);
+  const fragment = document.createDocumentFragment();
   boxes.innerHTML = "";
-  let size = 30;
-  for (let i = 0; i < amount; i++) {
+  size.forEach((s) => {
     const box = document.createElement("div");
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
+    box.style.width = `${s}px`;
+    box.style.height = `${s}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(box);
-    size += 10;
-  }
+    fragment.appendChild(box);
+  });
+  boxes.appendChild(fragment);
 }
 
 create.addEventListener("click", (e) => {
